@@ -3,6 +3,7 @@ using Alura.DesignPatterns2.Cap2;
 using Alura.DesignPatterns2.Cap3;
 using Alura.DesignPatterns2.Cap4;
 using Alura.DesignPatterns2.Cap5;
+using Alura.DesignPatterns2.Cap6;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,7 +19,7 @@ namespace Alura.DesignPatterns2
     {
         static void Main()
         {
-            Capitulo5();
+            Capitulo6();
         }
 
         static void Capitulo7()
@@ -28,7 +29,10 @@ namespace Alura.DesignPatterns2
 
         static void Capitulo6()
         {
-
+            IMensagem mensagem = new MensagemCliente("Victor");
+            IEnviador enviador = new EnviaPorSMS();
+            mensagem.Enviador = enviador;
+            mensagem.Envia();
         }
 
         static void Capitulo5()
