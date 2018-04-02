@@ -2,6 +2,7 @@
 using Alura.DesignPatterns2.Cap2;
 using Alura.DesignPatterns2.Cap3;
 using Alura.DesignPatterns2.Cap4;
+using Alura.DesignPatterns2.Cap5;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,7 +18,28 @@ namespace Alura.DesignPatterns2
     {
         static void Main()
         {
-            Capitulo4();
+            Capitulo5();
+        }
+
+        static void Capitulo7()
+        {
+
+        }
+
+        static void Capitulo6()
+        {
+
+        }
+
+        static void Capitulo5()
+        {
+            IExpressao esquerda = new Soma(new Soma(new Numero(1), new Numero(100)), new Numero(10));
+            IExpressao direita = new Subtracao(new Numero(20), new Numero(10));
+            IExpressao soma = new Soma(esquerda, direita);
+
+            Console.WriteLine(soma.Avalia());
+            ImpressoraVisitor impressora = new ImpressoraVisitor();
+            soma.Aceita(impressora);
         }
 
         static void Capitulo4()
